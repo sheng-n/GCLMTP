@@ -1,8 +1,7 @@
-# Multi-task prediction-based graph contrastive learning for inferring the relationship among lncRNAs, miRNAs, and diseases
+# Multi-task prediction-based graph contrastive learning for inferring the relationship among lncRNAs, miRNAs, and diseases (GCLMTP)
 
 ## 1. Overview
-
-The repository is organized as follows:
+The code for paper "Multi-task prediction-based graph contrastive learning for inferring the relationship among lncRNAs, miRNAs, and diseases". The repository is organized as follows:
 
 + `data/` contains the datasets used in the paper;
 + `code/similarity_calculation.py` is the calculation and integration of lncRNA/miRNA/disease similarities;
@@ -31,3 +30,6 @@ Here we provide a example to predict the association scores among lncRNAs, miRNA
 
 ## 4. Contacts
 If you have any questions, please email Nan Sheng (shengnan21@mails.jlu.edu.cn)
+
+## 5. Overview of GCLMTP.
+![模型图](https://user-images.githubusercontent.com/95516781/236208254-813b1165-7679-4252-8534-daf60cb1b940.jpg)
