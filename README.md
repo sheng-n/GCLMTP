@@ -31,5 +31,5 @@ Here we provide a example to predict the association scores among lncRNAs, miRNA
 ## 4. Contacts
 If you have any questions, please email Nan Sheng (shengnan21@mails.jlu.edu.cn)
 
-## 5. Overview of GCLMTP
+## 5. Workflow of GCLMTP
 ![模型图](https://user-images.githubusercontent.com/95516781/236208254-813b1165-7679-4252-8534-daf60cb1b940.jpg)
