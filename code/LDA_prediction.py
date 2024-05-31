@@ -24,17 +24,17 @@ def read_file1():
     test_id = np.loadtxt("data/lnc_dis_test_id1.txt")
     low_A = np.loadtxt("dataset1_result/low_A_256.txt")
     lnc_dis = np.loadtxt("data/lnc_dis_association.txt")
-    negtive_id = np.loadtxt("data/LDA_negtive_id.txt")
+    # negtive_id = np.loadtxt("data/LDA_negtive_id.txt")
     lnc_feature = low_A[:240]
     dis_feature = low_A[240:645]
     print(train_id.shape,test_id.shape)
-    return train_id, test_id, low_A, lnc_dis, lnc_feature, dis_feature, negtive_id
+    return train_id, test_id, low_A, lnc_dis, lnc_feature, dis_feature
 
 '''Read dataset2'''
 def read_file2():
     train_id = np.loadtxt("dataset2/lnc_dis_train_id1.txt")
     test_id = np.loadtxt("dataset2/lnc_dis_test_id1.txt")
-    negtive_id = np.loadtxt("dataset2/LDA_negtive_id.txt")
+    # negtive_id = np.loadtxt("dataset2/LDA_negtive_id.txt")
     low_A = np.loadtxt("dataset2_result/low_A_512.txt")
 
     di_lnc = pd.read_csv('dataset2/di_lnc_intersection.csv', index_col='Unnamed: 0')
@@ -43,7 +43,7 @@ def read_file2():
     lnc_feature = low_A[:665]
     dis_feature = low_A[665:981]
 
-    return train_id, test_id, low_A, lnc_dis, lnc_feature, dis_feature,negtive_id
+    return train_id, test_id, low_A, lnc_dis, lnc_feature, dis_feature
 
 
 def get_feature(A_feature, B_feature, index, adi_matrix):
@@ -64,11 +64,11 @@ def get_feature(A_feature, B_feature, index, adi_matrix):
     return np.array(input), output
 
 '''lncRNA-disease'''
-train_id, test_id, low_A, lnc_dis, lnc_feature, dis_feature, negtive_id = read_file1()
-# train_id, test_id, low_A, lnc_dis, lnc_feature, dis_feature,negtive_id = read_file2()
+train_id, test_id, low_A, lnc_dis, lnc_feature, dis_feature = read_file1()
+# train_id, test_id, low_A, lnc_dis, lnc_feature, dis_feature = read_file2()
 train_input, train_output = get_feature(lnc_feature, dis_feature, train_id, lnc_dis)
 test_input, test_output = get_feature(lnc_feature, dis_feature, test_id, lnc_dis)
-case_study_input,case_study_output = get_feature(lnc_feature,dis_feature,negtive_id,lnc_dis)
+# case_study_input,case_study_output = get_feature(lnc_feature,dis_feature,negtive_id,lnc_dis)
 
 
 #----------------------------Exploring the performance of different classifiers------------------------------
