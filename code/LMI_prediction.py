@@ -24,7 +24,7 @@ def read_file1():
 
     train_id = np.loadtxt("data/mi_lnc_train_id1.txt")
     test_id = np.loadtxt("data/mi_lnc_test_id1.txt")
-    neg_id = np.loadtxt("data/MLI_negtive_id.txt")
+    # neg_id = np.loadtxt("data/MLI_negtive_id.txt")
 
     low_A = np.loadtxt("dataset1_result/low_A_256.txt")
 
@@ -39,7 +39,7 @@ def read_file2():
 
     train_id = np.loadtxt("dataset2/mi_lnc_train_id1.txt")
     test_id = np.loadtxt("dataset2/mi_lnc_test_id1.txt")
-    neg_id = np.loadtxt("dataset2/MLI_negtive_id.txt")
+    # neg_id = np.loadtxt("dataset2/MLI_negtive_id.txt")
 
     low_A = np.loadtxt("dataset2_result/low_A_256.txt")
 
@@ -49,7 +49,7 @@ def read_file2():
     mi_feature = low_A[981: ]
     # print(mi_feature.shape)
     lnc_feature = low_A[:665]
-    return train_id, test_id, low_A, mi_lnc, mi_feature, lnc_feature, neg_id
+    return train_id, test_id, low_A, mi_lnc, mi_feature, lnc_feature
 
 def get_feature(A_feature, B_feature, index, adi_matrix):
     input = []
@@ -70,11 +70,11 @@ def get_feature(A_feature, B_feature, index, adi_matrix):
 
 
 '''miRNA-lncRNA'''
-# train_id, test_id, low_A, mi_lnc, mi_feature, lnc_feature, negtive_id = read_file1()
-train_id, test_id, low_A, mi_lnc, mi_feature, lnc_feature, negtive_id = read_file2()
+# train_id, test_id, low_A, mi_lnc, mi_feature, lnc_feature = read_file1()
+train_id, test_id, low_A, mi_lnc, mi_feature, lnc_feature = read_file2()
 train_input, train_output = get_feature(mi_feature, lnc_feature, train_id, mi_lnc)  # (2328, dim)
 test_input, test_output = get_feature(mi_feature, lnc_feature,test_id, mi_lnc)
-case_study_input,case_study_output = get_feature(mi_feature,lnc_feature,negtive_id,mi_lnc)
+# case_study_input,case_study_output = get_feature(mi_feature,lnc_feature,negtive_id,mi_lnc)
 
 
 # --------------------------------- Exploring the performance of different classifiers------------------------------
